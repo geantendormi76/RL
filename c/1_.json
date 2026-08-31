@@ -1,0 +1,63 @@
+{
+  "$schema": "https://repomix.com/schemas/latest/schema.json",
+  "input": {
+    "maxFileSize": 10000000
+  },
+  "output": {
+    "filePath": "c/repomix-output-RL.xml",
+    "style": "xml",
+    "parsableStyle": true,
+    "compress": false,
+    "fileSummary": true,
+    "directoryStructure": true,
+    "files": true,
+    "removeComments": false,
+    "removeEmptyLines": true,
+    "topFilesLength": 10,
+    "git": {
+      "sortByChanges": true,
+      "sortByChangesMaxCommits": 50
+    },
+    "patterns": [
+      { "pattern": "c/*.md", "compress": false },
+      { "pattern": "src-tauri/Cargo.toml", "compress": false },
+      { "pattern": "src-tauri/crates/core-*/**", "compress": false },
+      { "pattern": "src-tauri/crates/tools/tool-forge/core/**", "compress": false },
+      { "pattern": "src-tauri/crates/tools/tool-forge/stages/**", "compress": false }
+    ]
+  },
+  "include": [
+    "c/*.md",
+    "src-tauri/Cargo.toml",
+    "src-tauri/**"
+  ],
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      "**/node_modules/**",
+      "src-tauri/target/**",
+      "**/.venv/**",
+      "**/__pycache__/**",
+      "models/**",
+      "data/**",
+      "outputs/**",
+      "**/*.safetensors",
+      "**/*.gguf",
+      "**/*.bin",
+      "**/*.pt",
+      "**/*.rlib",
+      "**/*.dll",
+      "**/*.exe",
+      "**/*.sqlite3*",
+      "dist/**",
+      "c/*.xml"
+    ]
+  },
+  "security": {
+    "enableSecurityCheck": true
+  },
+  "tokenCount": {
+    "encoding": "o200k_base"
+  }
+}

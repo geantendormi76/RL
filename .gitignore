@@ -1,0 +1,69 @@
+# ==========================================
+# 🛡️ Aegis 核心数据隔离规范 (Project Specific)
+# ==========================================
+AAA/
+configs/.assets/
+models/
+bin/
+
+# Python 专属沙箱与字节码 (防污染)
+**/.venv/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# 临时打靶测试报告与可视化渲染图片
+*_report.md
+*_vis.png
+*_scan.png
+*_rendered.png
+/tmp/
+/test/
+1.py
+# ==========================================
+# 🦀 Rust & Tauri 后端装甲 (Backend)
+# ==========================================
+src-tauri/target/
+target/
+**/*.rs.bk
+repomix-output.xml
+4.py
+
+# ==========================================
+# 🟢 Vue 3 & Node.js 前端积木 (Frontend)
+# ==========================================
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# 环境变量与机密配置 (防泄漏)
+.env
+.env.*
+!.env.example
+.db
+cloudreve
+
+# 包管理器日志
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ==========================================
+# 💻 操作系统与编辑器 (OS & Editor)
+# ==========================================
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

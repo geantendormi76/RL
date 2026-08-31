@@ -1,0 +1,38 @@
+[project]
+name = "tool-forge"
+version = "0.1.0"
+description = "EvoHarness-RL Cognitive Training Sandbox"
+requires-python = ">=3.10,<3.12"
+dependencies = [
+    "torch",
+    "torchvision",
+    "transformers>=4.45.0",
+    "accelerate>=0.34.0",
+    "trl>=0.11.0",
+    "peft>=0.12.0",
+    "bitsandbytes>=0.43.0",
+    "datasets>=2.20.0",
+    "pydantic>=2.8.0",
+    "numpy>=1.26.0",
+    "lion-pytorch>=0.1.4",
+    "einops>=0.8.0",
+    "sentencepiece>=0.2.0",
+    "protobuf>=4.21.0",
+    "tiktoken>=0.7.0",
+    "safetensors>=0.4.3",
+    "modelscope>=1.18.0",
+    "socksio>=1.0.0",
+    "httpx-socks>=0.8.0",
+]
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+torchvision = { index = "pytorch-cu124" }
