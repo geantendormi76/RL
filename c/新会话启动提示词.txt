@@ -1,0 +1,32 @@
+你好！请先完整阅读项目物理绝对路径 `C:\dev\RL\` 下的 `HANDOFF_**.md` 全量交接文档，以及我使用 Repomix打包好的代码资产文件 `repomix-output_**.xml`。
+
+
+这份EvoHarness-RL：面向长时域LLM智能体的自演化运行时框架.pdf 研究论文将作为我们最高的黄金标准参考！我们接下来的所有开发必须要1:1对齐这份研究论文！
+
+---
+
+【👤 我的背景与 12 条 Windows Native 钢铁交互铁律】：
+1. 我是网络和编程初学者，请你必须用中文、一步一步来。
+2. 每次只给我一个明确的操作或命令，等我贴回执行结果与反馈后，再给下一步！绝对不要一次性给我倾倒很多命令或分支长流程。
+3. 严格遵循 TDD（测试驱动开发）与可验证工作流：改动必须先确认现象、给出可验证命令、根据客观数据再继续，拒绝盲目猜测打补丁。
+4. 【永久落盘/文件交付】：凡涉及项目源码修改、新建文件或持久化重构，必须使用 PowerShell 的 Set-Content -Path "文件路径" -Encoding UTF8 -Value @' ... '@ 单引号原样字符串协议全量完整落盘（防止 PowerShell 变量转义）。
+5. 命令行绝不能开头带有 # 注释（防止 PowerShell 误识别或跳过执行）。
+6. “后端”在本项目中 100% 唯一指代 Rust (`core-*` / Cargo Workspace)。架构遵循 2026 双语言 SOTA 分类范式。
+7. 架构重构铁律：自回归/多模态模型（LLM/翻译/ASR）强制全面切换为“Rust 主程序 + C-FFI 直连 `llama.dll` / `transcribe.dll` + GGUF”架构；静态视觉图模型（OCR/版面分析）强制全面切换为“Rust 主程序 + C-FFI `ort` (ONNX Runtime) + ONNX 单文件模型”架构，彻底消除 Python 沙箱 (.venv) 与网络端口。
+8. 凡是涉及 Rust 性能评估与压测，必须使用 --release 编译标志（严禁在 debug 模式下评测性能）。
+9. 每一阶段都要附上当前阶段功能作用和目的，通过通俗易懂、恰当的示例进行简洁解析，我需要了解底层的逻辑原理。
+10. 命令执行路径默认在项目根目录 `C:\dev\ai-forge`，编译命令请务必使用 `--manifest-path C:\dev\ai-forge\src-tauri\Cargo.toml`！
+11. 【底座/未包含源码修改前置契约 (Rule 11)】：若修改未在当前上下文打包全量源码的文件，AI 严禁盲猜开补丁！必须先输出 Get-Content <文件路径> 命令，白盒审阅后再输出药方！
+12. 🚨 CMake 与 Ninja 编译铁律：
+    - Windows MSVC 下编译 C++/CUDA 代码，必须显式挂载指定 `$env:CMAKE_GENERATOR = "Ninja"` 与 Visual Studio 内置 Ninja 路径。
+    - 更换 CMake 生成器时必须先删除旧 `target\` 目录清除 `CMakeCache.txt` 锁。
+13. 本地没有python，只有uv，建议使用：uv run --python 3.11 -i https://pypi.tuna.tsinghua.edu.cn/simple --with python
+14.  **代码迁移条铁律：在拥有成熟落地源码的项目重构中，大模型的角色绝不能是‘架构设计师’或‘新算法发明家’，而必须是‘1:1 结构编译器’。任何由 AI 自作主张发明的抽象逻辑或新流程，都会导致隐式业务契约的崩塌。**
+    - **【 Zero-Regression (零回归) 代码迁移范式 包含 3 大核心支柱】**：
+    - API Grounding (接口锚定)：必须强制锚定旧代码中最关键的数据交汇中台（例如你原源码中的 RawLayoutElement 数据交换 Schema）。
+    - Replay-based Validation (重放断言校验)：将旧系统对同一输入跑出的中间数据 JSON 产物作为 Ground Truth（真值）。AI 的重构结果不应该直接看最终 Markdown，而必须断言新 Rust 算子产出的中间 JSON 与旧 Python 产出的 JSON 1:1 逐字段卡位对齐。
+    - Surgical Transpilation (外科手术式直译)：旧代码怎么写的判别、怎么切的框，新代码 1:1 直译，严禁 AI 引入任何未在旧源码中出现的“新算法”或“新架构”。
+
+---
+
+请告知我你对我的项目理解，检查 HANDOFF_**.md 与 repomix-output_**.xml 是否已经包含，注意：这一步不用输出任何代码实现！
